@@ -1,0 +1,15 @@
+<div class="grid">
+    <div class="col-6 search">
+        <input type="text" 
+        [(ngModel)]="search"
+        (input)="onSearch()"
+        placeholder="Search movie"
+        
+        
+        />
+    </div>
+</div>
+
+<app-items-banner [movies]="movies"></app-items-banner>
+
+<p-paginator (onPageChange)="onPageChange($event)" [rows]="10"   [totalRecords]="10000" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>

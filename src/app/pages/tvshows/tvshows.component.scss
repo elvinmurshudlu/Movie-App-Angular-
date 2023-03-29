@@ -1,0 +1,20 @@
+.grid{
+    margin: 0;
+}
+
+  .search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #000;
+    padding: 0;
+    margin: 0;
+
+    input{
+        width: 400px;
+        padding: 10px ;
+        border-radius: 5px;
+        background: rgb(42, 42, 42);
+        color: white;
+    }
+}

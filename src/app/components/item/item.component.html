@@ -1,0 +1,35 @@
+<ng-container *ngIf="movie">
+    <a class="item" href="">
+        <a class="item" [routerLink]="'/movie/' + movie.id">
+            <div class="item-rating">
+              <i class="app-icon">star</i>
+              <span>{{ movie.vote_average }}</span
+              >/10
+            </div>
+            <div class="item-image">
+              <img [alt]="movie.title" [src]="'https://image.tmdb.org/t/p/w780/' + movie.backdrop_path" />
+            </div>
+            <div class="item-title">{{ movie.title }}</div>
+          </a>
+
+    </a>
+
+</ng-container>
+
+<ng-container *ngIf="tvShow">
+  <a class="item" href="">
+      <a class="item" >
+          <div class="item-rating">
+            <i class="app-icon">star</i>
+            <span>{{ tvShow.vote_average }}</span
+            >/10
+          </div>
+          <div class="item-image">
+            <img [alt]="tvShow.name" [src]="'https://image.tmdb.org/t/p/w780/' + tvShow.backdrop_path" />
+          </div>
+          <div class="item-title">{{ tvShow.name }}</div>
+        </a>
+
+  </a>
+
+</ng-container>

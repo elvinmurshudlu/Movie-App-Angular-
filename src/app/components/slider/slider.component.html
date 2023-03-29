@@ -1,0 +1,9 @@
+<div class="slider">
+    <ng-container *ngFor="let item of items; let i = index">
+        <div *ngIf="currentSlider == i" class="slide" @slideFade>
+            <img [src]="'https://image.tmdb.org/t/p/w780/' + item.backdrop_path" alt="">
+            <div class="title">{{ item.title}}</div>
+            
+        </div>
+    </ng-container>
+</div>
