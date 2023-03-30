@@ -25,6 +25,7 @@ import {
   ]
 })
 export class SliderComponent implements OnInit {
+  @Input() isSlider : boolean = true
  @Input() items : IMovie[] = []
  currentSlider : number = 0
 
@@ -33,10 +34,11 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.isSlider && 
     setInterval(()=>{
 
       this.currentSlider = ++ this.currentSlider % this.items.length
-    },2000)    
+    },2000)   
     
   }
 

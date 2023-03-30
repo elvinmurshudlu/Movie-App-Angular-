@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //!Primeng
 import { PaginatorModule } from 'primeng/paginator';
+import { TabViewModule } from 'primeng/tabview';
+import { ImageModule } from 'primeng/image';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,12 @@ import { ItemsBannerComponent } from './components/items-banner/items-banner.com
 import { ItemComponent } from './components/item/item.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { TvshowsComponent } from './pages/tvshows/tvshows.component';
+import { MovieComponent } from './pages/movie/movie.component';
+import { GenresComponent } from './pages/genres/genres.component';
+import { GenresBannerComponent } from './components/genres-banner/genres-banner.component';
+import { GenresMovieComponent } from './pages/genres-movie/genres-movie.component';
+import { GenresTvShowsComponent } from './pages/genres-tv-shows/genres-tv-shows.component';
+
 
 @NgModule({
   declarations: [
@@ -24,14 +32,22 @@ import { TvshowsComponent } from './pages/tvshows/tvshows.component';
     ItemsBannerComponent,
     ItemComponent,
     MoviesComponent,
-    TvshowsComponent
+    TvshowsComponent,
+    MovieComponent,
+    GenresComponent,
+    GenresBannerComponent,
+    GenresMovieComponent,
+    GenresTvShowsComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PaginatorModule
+    PaginatorModule,
+    TabViewModule,
+    ImageModule
     
   ],
   providers: [],

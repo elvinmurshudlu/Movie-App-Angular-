@@ -1,13 +1,14 @@
 <ng-container *ngIf="movie">
     <a class="item" href="">
-        <a class="item" [routerLink]="'/movie/' + movie.id">
+        <a class="item" [routerLink]="'/movies/' + movie.id">
             <div class="item-rating">
               <i class="app-icon">star</i>
               <span>{{ movie.vote_average }}</span
               >/10
             </div>
             <div class="item-image">
-              <img [alt]="movie.title" [src]="'https://image.tmdb.org/t/p/w780/' + movie.backdrop_path" />
+              <img *ngIf="movie.backdrop_path != null" [alt]="movie.title" [src]="'https://image.tmdb.org/t/p/w780/' + movie.backdrop_path" />
+              <img *ngIf="movie.backdrop_path == null"[alt]="movie.title" src="assets/images/noimage.png" />
             </div>
             <div class="item-title">{{ movie.title }}</div>
           </a>
@@ -25,7 +26,9 @@
             >/10
           </div>
           <div class="item-image">
-            <img [alt]="tvShow.name" [src]="'https://image.tmdb.org/t/p/w780/' + tvShow.backdrop_path" />
+            <img *ngIf="tvShow.backdrop_path != null" [alt]="tvShow.name" [src]="'https://image.tmdb.org/t/p/w780/' + tvShow.backdrop_path" />
+            <img *ngIf="tvShow.backdrop_path == null"[alt]="tvShow.name" src="assets/images/noimage.png" />
+
           </div>
           <div class="item-title">{{ tvShow.name }}</div>
         </a>

@@ -1,0 +1,25 @@
+.slider {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+.slider .slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slider .slide .title {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  color: white;
+  font-size: 30px;
+}
+.slider .slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=slider.component.css.map */

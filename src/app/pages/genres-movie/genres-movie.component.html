@@ -1,0 +1,3 @@
+<app-items-banner [movies]="movies" title="Genres Movie"></app-items-banner>
+
+<p-paginator (onPageChange)="onPageChange($event)"  [rows]="10" [totalRecords]="10000" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>

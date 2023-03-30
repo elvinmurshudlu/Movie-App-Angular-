@@ -1,0 +1,24 @@
+<ng-container *ngIf="movieDetailed">
+    <app-slider [items]="[movieDetailed]" [isSlider]="false"></app-slider>
+    <p-tabView>
+        <p-tabPanel header="Images">
+            <div class="grid">
+                <ng-container *ngFor="let image of movieImages">
+                    <!-- <img class="col-12 md:col-4 lg:col-3 xl:col-2" [src]="'https://image.tmdb.org/t/p/w780/' + image.file_path" alt=""> -->
+                    
+                    <p-image width="250px" [preview]="true" [src]="'https://image.tmdb.org/t/p/w780/' + image.file_path" alt="Image"></p-image>
+                </ng-container>
+            </div>
+        </p-tabPanel>
+        <!-- <p-tabPanel header="Videos">
+
+            <ng-container *ngFor="let video of movieVideos">
+                <iframe *ngIf="video.site == 'YouTube'" width="560" height="315" [src]="'https://www.youtube.com/embed/' + video.key" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            </ng-container>
+        </p-tabPanel> -->
+        <p-tabPanel header="Similar Movie">
+            <app-items-banner [movies]="similarMovies" title="Similar Movies"></app-items-banner>
+        </p-tabPanel>
+    </p-tabView>
+</ng-container>

@@ -4,14 +4,14 @@
     <div  class="grid" >
    
         <ng-container *ngIf="movies">
-            <div class="col-12 lg:col-3 mf:col-3" *ngFor="let movie of movies">
+            <div class="col-12 xl:col-2 lg:col-3 md:col-4" *ngFor="let movie of movies">
                 <app-item [movie]="movie"></app-item>
         
             </div>
         </ng-container>
     
         <ng-container *ngIf="tvShows">
-            <div class="col-12 lg:col-3 mf:col-3" *ngFor="let tvShow of tvShows">
+            <div class="col-12 xl:col-2 lg:col-3 md:col-4" *ngFor="let tvShow of tvShows">
                 <app-item [tvShow]="tvShow"></app-item>
         
             </div>

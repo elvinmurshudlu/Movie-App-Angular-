@@ -1,0 +1,37 @@
+.item {
+  position: relative;
+  display: block;
+  min-height: 425px;
+  border-radius: 5px;
+  background-color: black;
+  border: 1px solid gray;
+  color: white;
+}
+.item-image img {
+  width: 100%;
+  border-radius: 5px;
+  height: 375px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.item-rating {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 10px;
+  left: 10px;
+  background-color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.item-rating .app-icon {
+  margin-right: 5px;
+  color: #d4af37;
+}
+.item-title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin: 0.5rem;
+  height: 30px;
+}/*# sourceMappingURL=item.component.css.map */

@@ -1,0 +1,16 @@
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 20px;
+  background: #000;
+}
+nav ul {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  font-size: 20px;
+}
+nav ul a {
+  color: white;
+}/*# sourceMappingURL=navbar.component.css.map */
