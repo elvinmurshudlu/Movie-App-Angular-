@@ -1,9 +1,21 @@
 <div class="slider">
-    <ng-container *ngFor="let item of items; let i = index">
-        <div *ngIf="currentSlider == i" class="slide" @slideFade>
-            <img [src]="'https://image.tmdb.org/t/p/w780/' + item.backdrop_path" alt="">
-            <div class="title">{{ item.title}}</div>
-            
-        </div>
+    <ng-container *ngIf="items.length >0 ">
+        <ng-container *ngFor="let item of items; let i = index">
+            <div *ngIf="currentSlider == i" class="slide" @slideFade>
+                <img [src]="'https://image.tmdb.org/t/p/w780/' + item.backdrop_path" alt="">
+                <div class="title">{{ item.title}}</div>
+                
+            </div>
+        </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="tvShows.length >0">
+        <ng-container *ngFor="let item of tvShows; let i = index">
+            <div *ngIf="currentSlider == i" class="slide" @slideFade>
+                <img [src]="'https://image.tmdb.org/t/p/w780/' + item.backdrop_path" alt="">
+                <div class="title">{{ item.name}}</div>
+                
+            </div>
+        </ng-container>
     </ng-container>
 </div>

@@ -1,8 +1,9 @@
-import { identifierName } from '@angular/compiler';
+
 import { Component ,OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { IBackdrop, IMovie, IVideo } from 'src/app/model/model';
+import { ActivatedRoute , NavigationEnd, NavigationStart, Router} from '@angular/router';
+import { IBackdrop, IMovie, ITvShow, IVideo } from 'src/app/model/model';
 import { MovieService } from 'src/app/service/movie.service';
+import { TvshowsService } from 'src/app/service/tvshows.service';
 
 @Component({
   selector: 'app-movie',
@@ -10,17 +11,38 @@ import { MovieService } from 'src/app/service/movie.service';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit{
-
-  movieDetailed : IMovie | null =null
+//!Movie Details
+  movieDetailed : IMovie | null = null
   movieImages : IBackdrop[] = []
   movieVideos : IVideo[] = []
   similarMovies : IMovie[] = []
-  constructor (private router:ActivatedRoute , private movie: MovieService){
+
+
+
+  currentPath : string = ""
+  
+  constructor (private router:ActivatedRoute , 
+    private movie: MovieService,
+    
+    
+     ){
 
   }
 
   ngOnInit(): void {
-    this.router.params.subscribe(({id})=>{      
+
+    
+
+    this.selectedMovieData()
+
+    
+  }
+
+
+  selectedMovieData(){
+    console.log("Moviedir");
+    this.router.params.subscribe(({id})=>{ 
+
       this.movie.getMovieDetails(id).subscribe((sub)=>{
         this.movieDetailed = sub
       })
@@ -39,8 +61,8 @@ export class MovieComponent implements OnInit{
         this.similarMovies = sub
       })
     })
-    
   }
+
 
   
 

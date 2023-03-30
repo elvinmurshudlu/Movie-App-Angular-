@@ -1,10 +1,10 @@
-<ng-container *ngIf="movieDetailed">
-    <app-slider [items]="[movieDetailed]" [isSlider]="false"></app-slider>
+<ng-container *ngIf="tvShowDetailed">
+    <app-slider [tvShows]="[tvShowDetailed]" [isSlider]="false" ></app-slider>
     <p-tabView>
         <p-tabPanel header="Images">
             <div class="grid">
-                <ng-container *ngFor="let image of movieImages">
-                    <!-- <img class="col-12 md:col-4 lg:col-3 xl:col-2" [src]="'https://image.tmdb.org/t/p/w780/' + image.file_path" alt=""> -->
+                <ng-container *ngFor="let image of tvShowImages">
+                    
                     
                     <p-image width="250px" [preview]="true" [src]="'https://image.tmdb.org/t/p/w780/' + image.file_path" alt="Image"></p-image>
                 </ng-container>
@@ -18,8 +18,7 @@
             </ng-container>
         </p-tabPanel> -->
         <p-tabPanel header="Similar Movie">
-            <app-items-banner [movies]="similarMovies" title="Similar Movies"></app-items-banner>
+            <app-items-banner [tvShows]="similarTvShow" title="Similar Movies"></app-items-banner>
         </p-tabPanel>
     </p-tabView>
 </ng-container>
-

@@ -21,6 +21,7 @@ import { GenresComponent } from './pages/genres/genres.component';
 import { GenresBannerComponent } from './components/genres-banner/genres-banner.component';
 import { GenresMovieComponent } from './pages/genres-movie/genres-movie.component';
 import { GenresTvShowsComponent } from './pages/genres-tv-shows/genres-tv-shows.component';
+import { TvShowComponent } from './pages/tv-show/tv-show.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { GenresTvShowsComponent } from './pages/genres-tv-shows/genres-tv-shows.
     GenresComponent,
     GenresBannerComponent,
     GenresMovieComponent,
-    GenresTvShowsComponent
+    GenresTvShowsComponent,
+    TvShowComponent
 
   ],
   imports: [

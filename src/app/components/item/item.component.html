@@ -19,7 +19,7 @@
 
 <ng-container *ngIf="tvShow">
   <a class="item" href="">
-      <a class="item" >
+      <a class="item" [routerLink]="'/tvshows/' + tvShow.id">
           <div class="item-rating">
             <i class="app-icon">star</i>
             <span>{{ tvShow.vote_average }}</span

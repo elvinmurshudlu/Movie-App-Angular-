@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http"
-import { IGenreDto, ITvShow, ITvShowDto } from '../model/model';
+import { IGenreDto, IImages, ITvShow, ITvShowDto, IVideoDto } from '../model/model';
 import {switchMap , of} from "rxjs"
 
 @Injectable({
@@ -38,6 +38,27 @@ export class TvshowsService {
   }
 
   
+
+  getTvShowDetails(id:string){
+    return this.http.get<ITvShow>(`${this.baseUrl + id}?api_key=${this.apiKey}`)
+  }
+
+  getTvShowImages(id:string){
+    return this.http.get<IImages>(`${this.baseUrl + id}/images?api_key=${this.apiKey}`).pipe(switchMap((map)=>{
+      return of(map.backdrops)
+    }))
+  }
+  getTvShowVideos(id:string){
+    return this.http.get<IVideoDto>(`${this.baseUrl + id}/videos?api_key=${this.apiKey}`).pipe(switchMap((map)=>{
+      return of(map.results)
+    }))
+  }
+
+  getSimilarTvShow(id : string){
+    return this.http.get<ITvShowDto>(`${this.baseUrl + id}/similar?api_key=${this.apiKey}`).pipe(switchMap((map)=>{
+      return of(map.results)
+    }))
+  }
 
 
   

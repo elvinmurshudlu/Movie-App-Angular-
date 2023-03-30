@@ -1,5 +1,5 @@
 import { Component,OnInit , Input } from '@angular/core';
-import { IMovie } from 'src/app/model/model';
+import { IMovie, ITvShow } from 'src/app/model/model';
 import {
   animate,
   state,
@@ -27,6 +27,9 @@ import {
 export class SliderComponent implements OnInit {
   @Input() isSlider : boolean = true
  @Input() items : IMovie[] = []
+
+ @Input() tvShows : ITvShow[] = []
+
  currentSlider : number = 0
 
 
